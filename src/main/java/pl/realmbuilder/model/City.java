@@ -174,4 +174,25 @@ public class City {
         this.playerWon = false;
     }
 
+    // settery potrzebne do wczytania zapisu
+    public void setCurrentTurn(int turn) {
+        this.currentTurn = turn;
+    }
+
+    public void setCurrentSeason(Season season) {
+        this.currentSeason = season;
+    }
+
+    public void setMaxGoldEverHeld(int value) {
+        this.maxGoldEverHeld = value;
+    }
+
+    public void setConsecutiveRaidsSurvived(int value) {
+        this.consecutiveRaidssurvived = value;
+    }
+
+    public void setTurnsWithHighMorale(int value) {
+        this.turnsWithHighMorale = value;
+    }
+
 }
