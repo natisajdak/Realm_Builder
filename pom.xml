@@ -56,6 +56,12 @@
             <version>${javafx.version}</version>
             <classifier>win</classifier>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>${javafx.version}</version>
+            <classifier>win</classifier>
+        </dependency>
 
     </dependencies>
 
@@ -86,7 +92,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>pl.realmbuilder.Main</mainClass>
+                    <mainClass>pl.realmbuilder.ui.App</mainClass>
                 </configuration>
             </plugin>
 
