@@ -6,22 +6,22 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="pl.realmbuilder.ui.MenuController"
       alignment="CENTER"
-      spacing="25"
+      spacing="15"
       styleClass="menu-root">
 
-    <Label text="⚔ REALM BUILDER ⚔" styleClass="menu-title"/>
+    <VBox alignment="CENTER" spacing="0">
+        <Label text="⚔ REALM BUILDER ⚔" styleClass="menu-title"/>
+        <Label text="Zbuduj potężne miasto. Przetrwaj 80 tur." styleClass="menu-subtitle"/>
+    </VBox>
 
-    <Label text="Zbuduj potężne miasto. Przetrwaj 80 tur." styleClass="menu-subtitle"/>
-
-    <VBox spacing="15" alignment="CENTER" styleClass="menu-panel" maxWidth="450">
-
+    <VBox spacing="12" alignment="CENTER" styleClass="menu-panel" maxWidth="450">
         <Label text="Nazwa Twojego miasta:" styleClass="menu-label"/>
         <TextField fx:id="cityNameField"
                    promptText="Wpisz nazwę miasta..."
                    maxWidth="350"
                    styleClass="menu-textfield"/>
 
-        <Label text="Wybierz poziom trudności:" styleClass="menu-label"/>
+        <Label text="Wybierz poziom trudności:" styleClass="menu-label" style="-fx-padding: 5 0 0 0;"/>
 
         <HBox spacing="12" alignment="CENTER">
             <ToggleButton fx:id="easyBtn" text="⭐ Łatwy" styleClass="menu-toggle"/>
@@ -30,9 +30,10 @@
         </HBox>
     </VBox>
 
-    <Button text="▶ Rozpocznij" onAction="#onStartGame" styleClass="menu-btn-start"/>
-
-    <Button text="📂 Wczytaj zapis gry" onAction="#onLoadGame" styleClass="menu-btn-load"/>
+    <VBox alignment="CENTER" spacing="10">
+        <Button text="▶ Rozpocznij" onAction="#onStartGame" styleClass="menu-btn-start" prefWidth="220"/>
+        <Button text="📂 Wczytaj zapis gry" onAction="#onLoadGame" styleClass="menu-btn-load" prefWidth="220"/>
+    </VBox>
 
     <Label fx:id="errorLabel" style="-fx-text-fill: #e74c3c; -fx-font-size: 14px; -fx-font-weight: bold;"/>
 
