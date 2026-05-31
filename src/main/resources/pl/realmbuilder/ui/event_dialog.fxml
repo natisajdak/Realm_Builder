@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pl.realmbuilder.ui.EventDialogController"
+      spacing="15"
+      styleClass="dialog-root">
+
+    <Label fx:id="eventTitleLabel" text="⚡ ZDARZENIE" styleClass="dialog-title"/>
+
+    <Label fx:id="eventDescLabel" text="" wrapText="true" styleClass="dialog-text"/>
+
+    <Separator/>
+
+    <Label text="👥 Doradcy którzy mogą pomóc:" styleClass="dialog-subtitle"/>
+
+    <ListView fx:id="advisorsList" prefHeight="120" styleClass="parchment-list"/>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="🤝 Użyj doradcy" onAction="#onUseAdvisor" styleClass="btn-primary"/>
+        <Button text="✖ Odrzuć pomoc" onAction="#onDismiss" styleClass="btn-danger-small"/>
+    </HBox>
+
+    <Label fx:id="resultLabel" text="" wrapText="true" styleClass="dialog-highlight" alignment="CENTER" maxWidth="Infinity"/>
+
+</VBox>

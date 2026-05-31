@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pl.realmbuilder.ui.EndScreenController"
+      alignment="CENTER"
+      spacing="15"
+      styleClass="dialog-root">
+
+    <Label fx:id="resultLabel" text="WYGRANA!" styleClass="dialog-title"/>
+
+    <Label fx:id="rankLabel" text="" styleClass="dialog-subtitle"/>
+
+    <Label fx:id="rankDescLabel" text="" wrapText="true" styleClass="dialog-text" alignment="CENTER"/>
+
+    <Label fx:id="scoreLabel" text="" styleClass="dialog-highlight"/>
+
+    <Separator/>
+
+    <Label text="Statystyki końcowe" styleClass="dialog-subtitle"/>
+
+    <GridPane hgap="30" vgap="10" alignment="CENTER">
+        <Label text="Przeżyte tury:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="grid-label"/>
+        <Label fx:id="turnsLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="grid-value"/>
+
+        <Label text="Złoto:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="grid-label"/>
+        <Label fx:id="goldLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="grid-value"/>
+
+        <Label text="Populacja:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="grid-label"/>
+        <Label fx:id="popLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="grid-value"/>
+
+        <Label text="Morale:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="grid-label"/>
+        <Label fx:id="moraleLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="grid-value"/>
+    </GridPane>
+
+    <Separator/>
+
+    <Label text="Osiągnięcia" styleClass="dialog-subtitle"/>
+
+    <ListView fx:id="achievementsList" prefHeight="120" styleClass="parchment-list"/>
+
+    <Button text="Powrót do menu" onAction="#onBackToMenu" styleClass="btn-primary" prefWidth="200"/>
+
+</VBox>

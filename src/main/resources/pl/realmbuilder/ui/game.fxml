@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pl.realmbuilder.ui.GameController"
+      styleClass="root">
+
+    <HBox styleClass="top-bar" alignment="CENTER_LEFT">
+        <Label fx:id="cityLabel" text="🏰 Miasto" styleClass="city-label"/>
+        <Label fx:id="turnLabel" text="Tura: 1/80" styleClass="turn-label"/>
+        <Label fx:id="seasonLabel" text="Wiosna" styleClass="season-label"/>
+        <ProgressBar fx:id="turnBar" styleClass="turn-bar" prefWidth="150" prefHeight="10"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="seasonBonusLabel" text="" styleClass="turn-label"/>
+        <Label fx:id="warningLabel" text="" styleClass="warning-label" visible="false"/>
+    </HBox>
+
+    <StackPane VBox.vgrow="ALWAYS" style="-fx-background-color: #2c1e16;">
+        <WebView fx:id="mapView" />
+    </StackPane>
+
+    <HBox styleClass="bottom-panel" spacing="20" prefHeight="260">
+
+        <VBox spacing="8" minWidth="160">
+            <Label text="📊 ZASOBY" styleClass="section-label"/>
+            <HBox styleClass="resource-box" alignment="CENTER_LEFT">
+                <Label text="💰 Złoto" styleClass="resource-name"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="goldLabel" text="0" styleClass="resource-gold"/>
+            </HBox>
+            <HBox styleClass="resource-box" alignment="CENTER_LEFT">
+                <Label text="🌾 Żywność" styleClass="resource-name"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="foodLabel" text="0" styleClass="resource-food"/>
+            </HBox>
+            <HBox styleClass="resource-box" alignment="CENTER_LEFT">
+                <Label text="🌲 Drewno" styleClass="resource-name"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="woodLabel" text="0" styleClass="resource-wood"/>
+            </HBox>
+            <HBox styleClass="resource-box" alignment="CENTER_LEFT">
+                <Label text="⚔ Morale" styleClass="resource-name"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="moraleLabel" text="0" styleClass="resource-morale"/>
+            </HBox>
+            <HBox styleClass="resource-box" alignment="CENTER_LEFT">
+                <Label text="👥 Populacja" styleClass="resource-name"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="populationLabel" text="0" styleClass="resource-pop"/>
+            </HBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="▶ Następna tura" styleClass="btn-primary" onAction="#onNextTurn" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="8" HBox.hgrow="ALWAYS" maxWidth="260">
+            <Label text="🔨 DOSTĘPNE BUDYNKI" styleClass="section-label"/>
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll">
+                <VBox fx:id="availableBuildingsBox" spacing="6" style="-fx-padding: 0 5 0 0;"/>
+            </ScrollPane>
+            <Button text="🔨 Buduj wybrany" styleClass="btn-secondary" onAction="#onBuild" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="8" HBox.hgrow="ALWAYS" maxWidth="260">
+            <Label text="▲ ZBUDOWANE" styleClass="section-label"/>
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll">
+                <VBox fx:id="ownedBuildingsBox" spacing="6" style="-fx-padding: 0 5 0 0;"/>
+            </ScrollPane>
+            <Button text="▲ Ulepsz wybrany" styleClass="btn-secondary" onAction="#onUpgrade" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="6" minWidth="220" HBox.hgrow="ALWAYS">
+            <Label text="👑 RADA MIASTA" styleClass="section-label"/>
+            <HBox fx:id="advisorsBox" spacing="8" alignment="CENTER_LEFT"/>
+            <Label fx:id="advisorQuoteLabel" text="Wybierz doradcę..." styleClass="advisor-quote" maxWidth="Infinity"/>
+            <Button text="🤝 Użyj doradcy" styleClass="btn-secondary" onAction="#onUseAdvisor" maxWidth="Infinity"/>
+
+            <Region prefHeight="5"/>
+            <Label text="📜 KRONIKA" styleClass="section-label"/>
+            <TextArea fx:id="eventLog" editable="false" wrapText="true" styleClass="event-log" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+    </HBox>
+
+    <HBox styleClass="status-bar" alignment="CENTER_LEFT" spacing="15">
+        <Label fx:id="statusLabel" text="Witaj, władco! Wybierz akcję." styleClass="status-label"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="💾 Zapisz grę" styleClass="btn-small" onAction="#onSave"/>
+        <Button text="✖ Zakończ" styleClass="btn-danger-small" onAction="#onQuit"/>
+    </HBox>
+
+</VBox>

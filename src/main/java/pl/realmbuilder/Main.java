@@ -1,10 +1,9 @@
 package pl.realmbuilder;
 
-import pl.realmbuilder.engine.GameEngine;
+import pl.realmbuilder.ui.App;
 
 public class Main {
     public static void main(String[] args) {
-        GameEngine engine = new GameEngine();
-        engine.start();
+        App.launch(App.class, args);
     }
 }
