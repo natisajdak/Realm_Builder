@@ -40,7 +40,5 @@ public class Witch implements Advisor {
         city.addResource(ResourceType.POPULATION, 15);
         city.addResource(ResourceType.MORALE, 15);
         city.addResource(ResourceType.FOOD, 20);
-        System.out.println("🔮 Wiedźma Morgana: \"Widziałam to w gwiazdach... "
-                + "Moje zaklęcia uleczyły chorych i przywróciły urodzaj!\"");
     }
 }

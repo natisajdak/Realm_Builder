@@ -6,11 +6,27 @@ import pl.realmbuilder.model.ResourceType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class AchievementTracker {
 
     private final List<Achievement> achievements = new ArrayList<>();
+
+    // Nasz kanał komunikacyjny z oknem UI
+    private Consumer<String> uiLogger;
+
+    public void setLogger(Consumer<String> logger) {
+        this.uiLogger = logger;
+    }
+
+    private void log(String message) {
+        if (uiLogger != null) {
+            uiLogger.accept(message);
+        } else {
+            System.out.println(message); // Awaryjnie do konsoli
+        }
+    }
 
     public AchievementTracker() {
         initAchievements();
@@ -74,7 +90,8 @@ public class AchievementTracker {
                 .findFirst()
                 .ifPresent(a -> {
                     a.unlock();
-                    System.out.println("🏅 OSIĄGNIĘCIE ODBLOKOWANE: "
+                    // Bezpieczne emoji i wysyłka do okna gry
+                    log("🏆 OSIĄGNIĘCIE ODBLOKOWANE: "
                             + a.getName() + " — " + a.getDescription());
                 });
     }

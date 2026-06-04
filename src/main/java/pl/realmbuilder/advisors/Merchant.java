@@ -40,7 +40,5 @@ public class Merchant implements Advisor {
     public void help(City city, GameEvent event) {
         city.addResource(ResourceType.GOLD, 60);
         city.addResource(ResourceType.MORALE, 5);
-        System.out.println("💰 Kupiec Benedikt: \"Interes to interes! "
-                + "Sprzedałem zapasy z magazynów i odzyskaliśmy złoto!\"");
     }
 }

@@ -26,8 +26,6 @@ public class AdvisorLoader {
                 Advisor instance = (Advisor)
                         clazz.getDeclaredConstructor().newInstance();
                 advisors.add(instance);
-                System.out.println("[AdvisorLoader] Załadowano doradcę: "
-                        + clazz.getAnnotation(AdvisorPlugin.class).name());
             }
         } catch (Exception e) {
             System.err.println("[AdvisorLoader] Błąd: " + e.getMessage());

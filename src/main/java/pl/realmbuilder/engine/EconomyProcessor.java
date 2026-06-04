@@ -3,7 +3,24 @@ package pl.realmbuilder.engine;
 import pl.realmbuilder.model.City;
 import pl.realmbuilder.model.ResourceType;
 
+import java.util.function.Consumer;
+
 public class EconomyProcessor {
+
+    // Nasz kanał komunikacyjny z oknem UI
+    private Consumer<String> uiLogger;
+
+    public void setLogger(Consumer<String> logger) {
+        this.uiLogger = logger;
+    }
+
+    private void log(String message) {
+        if (uiLogger != null) {
+            uiLogger.accept(message);
+        } else {
+            System.out.println(message); // Awaryjnie do konsoli
+        }
+    }
 
     // wywołaj po produkcji budynków, przed końcem tury
     public void process(City city) {
@@ -28,7 +45,9 @@ public class EconomyProcessor {
             int populationLoss = shortage / 2;
             city.subtractResource(ResourceType.POPULATION, populationLoss);
             city.subtractResource(ResourceType.MORALE, 5);
-            System.out.println("⚠️  Głód! Brakuje " + shortage
+
+            // Bezpieczne emoji i wysyłka do okna gry
+            log("❗ Głód! Brakuje " + shortage
                     + " żywności. Populacja spada o " + populationLoss + ".");
         }
     }

@@ -86,6 +86,10 @@ public class GameController implements Initializable {
         availableAdvisors  = advisorLoader.loadAdvisors();
         availableAdvisors.forEach(city::addAdvisor);
 
+        narrator.setLogger(this::log);
+        seasonManager.setLogger(this::log);
+        economyProcessor.setLogger(this::log);
+        achievementTracker.setLogger(this::log);
         turnProcessor = new TurnProcessor(
                 resourceCalc, seasonManager, economyProcessor,
                 achievementTracker, eventLoader, narrator);
@@ -341,8 +345,23 @@ public class GameController implements Initializable {
     public void onUseAdvisor() {
         if (selectedAdvisor == null) { setStatus("⚠ Kliknij kartę doradcy żeby go wybrać."); return; }
         if (!city.canAfford(selectedAdvisor.getCost())) { setStatus("❌ Za mało złota! Potrzebujesz " + selectedAdvisor.getCost() + "💰"); return; }
+
         city.subtractResource(ResourceType.GOLD, selectedAdvisor.getCost());
-        log("🤝 " + selectedAdvisor.getName() + " pomógł miastu!");
+
+        // Dynamicznie dobieramy unikalną kwestię dla każdego doradcy
+        String Dialog = "Mój miecz i tarcza są w gotowości, Władco!";
+
+        switch (selectedAdvisor.getSpecialty()) {
+            case TRADE ->
+                    Dialog = "Interes to interes! Sprzedałem zapasy z magazynów i odzyskaliśmy złoto!";
+            case MAGIC ->
+                    Dialog = "Czuję przypływ starożytnej magii... Los osady wkrótce się odmieni.";
+            case COMBAT ->
+                    Dialog = "Odpędziliśmy zagrożenie! Granice Twojego królestwa są bezpieczne.";
+        }
+
+        narrator.narrateAdvisorAction(selectedAdvisor.getName(), Dialog);
+
         setStatus("🤝 " + selectedAdvisor.getName() + " użyty.");
         updateUI();
     }

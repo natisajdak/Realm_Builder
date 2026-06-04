@@ -43,7 +43,5 @@ public class Knight implements Advisor {
         city.addResource(ResourceType.POPULATION, 10);
         city.addResource(ResourceType.GOLD, 20);
         city.addResource(ResourceType.MORALE, 10);
-        System.out.println("🗡️  Rycerz Aldric: \"Mój miecz obronił miasto! "
-                + "Wróg poniósł klęskę, a my odzyskaliśmy część strat!\"");
     }
 }

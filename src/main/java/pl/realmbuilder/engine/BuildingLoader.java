@@ -27,8 +27,6 @@ public class BuildingLoader {
                         (pl.realmbuilder.interfaces.Building)
                                 clazz.getDeclaredConstructor().newInstance();
                 buildings.add(instance);
-                System.out.println("[BuildingLoader] Załadowano: "
-                        + clazz.getAnnotation(Building.class).name());
             }
         } catch (Exception e) {
             System.err.println("[BuildingLoader] Błąd: " + e.getMessage());
