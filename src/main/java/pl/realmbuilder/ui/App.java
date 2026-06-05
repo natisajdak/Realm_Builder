@@ -33,7 +33,7 @@ public class App extends Application {
                                 String difficulty) throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 App.class.getResource("/pl/realmbuilder/ui/game.fxml"));
-        Scene scene = new Scene(loader.load(), 900, 650);
+        Scene scene = new Scene(loader.load(), 1120, 720);
         scene.getStylesheets().add(
                 App.class.getResource("/pl/realmbuilder/ui/style.css").toExternalForm());
         GameController controller = loader.getController();
@@ -47,7 +47,7 @@ public class App extends Application {
             throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 App.class.getResource("/pl/realmbuilder/ui/end_screen.fxml"));
-        Scene scene = new Scene(loader.load(), 600, 500);
+        Scene scene = new Scene(loader.load(), 700, 580);
         scene.getStylesheets().add(
                 App.class.getResource("/pl/realmbuilder/ui/style.css").toExternalForm());
         EndScreenController controller = loader.getController();

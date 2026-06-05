@@ -27,14 +27,13 @@ public class EndScreenController {
                               AchievementTracker tracker,
                               RankCalculator rankCalc) {
         // wynik gry
+        resultLabel.getStyleClass().removeAll("end-win", "end-loss");
         if (city.isPlayerWon()) {
             resultLabel.setText("🏆 WYGRANA!");
-            resultLabel.setStyle("-fx-font-size: 28; -fx-font-weight: bold;"
-                    + " -fx-text-fill: #e2b96f;");
+            resultLabel.getStyleClass().add("end-win");
         } else {
             resultLabel.setText("💀 PRZEGRANA");
-            resultLabel.setStyle("-fx-font-size: 28; -fx-font-weight: bold;"
-                    + " -fx-text-fill: #ff6666;");
+            resultLabel.getStyleClass().add("end-loss");
         }
 
         // ranga

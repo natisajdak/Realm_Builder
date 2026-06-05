@@ -1,37 +1,47 @@
 {
-  "cityName": "Avena",
+  "cityName": "ko",
   "difficulty": "NORMAL",
-  "currentTurn": 65,
-  "currentSeason": "SPRING",
+  "currentTurn": 64,
+  "currentSeason": "WINTER",
   "resources": {
-    "GOLD": 239,
-    "POPULATION": 20,
-    "WOOD": 50,
-    "MORALE": 339,
-    "FOOD": 240
+    "GOLD": 2196,
+    "POPULATION": 365,
+    "WOOD": 974,
+    "MORALE": 1346,
+    "FOOD": 1000
   },
   "buildingClassNames": [
-    "pl.realmbuilder.buildings.Barracks",
     "pl.realmbuilder.buildings.Market",
-    "pl.realmbuilder.buildings.Farm",
-    "pl.realmbuilder.buildings.Well",
+    "pl.realmbuilder.buildings.Barracks",
     "pl.realmbuilder.buildings.Sawmill",
-    "pl.realmbuilder.buildings.Church",
+    "pl.realmbuilder.buildings.Well",
+    "pl.realmbuilder.buildings.Farm",
     "pl.realmbuilder.buildings.Houses",
+    "pl.realmbuilder.buildings.Church",
     "pl.realmbuilder.buildings.Castle"
   ],
   "buildingLevels": [
+    2,
     1,
     1,
     1,
-    1,
-    1,
+    2,
     1,
     1,
     1
   ],
-  "maxGoldEverHeld": 849,
+  "buildingPositions": {
+    "pl.realmbuilder.buildings.Well": "9:1",
+    "pl.realmbuilder.buildings.Farm": "5:1",
+    "pl.realmbuilder.buildings.Barracks": "7:3",
+    "pl.realmbuilder.buildings.Market": "4:0",
+    "pl.realmbuilder.buildings.Houses": "2:3",
+    "pl.realmbuilder.buildings.Church": "1:0",
+    "pl.realmbuilder.buildings.Sawmill": "2:1",
+    "pl.realmbuilder.buildings.Castle": "6:0"
+  },
+  "maxGoldEverHeld": 2196,
   "consecutiveRaidsSurvived": 0,
-  "turnsWithHighMorale": 61,
-  "savedAt": "2026-06-10 13:56:03"
+  "turnsWithHighMorale": 55,
+  "savedAt": "2026-06-13 13:38:43"
 }

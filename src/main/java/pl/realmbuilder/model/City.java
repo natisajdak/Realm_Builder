@@ -5,6 +5,7 @@ import pl.realmbuilder.interfaces.Advisor;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +20,7 @@ public class City {
     // posiadane budynki i doradcy
     private final List<Building> buildings = new ArrayList<>();
     private final List<Advisor> advisors = new ArrayList<>();
+    private final Map<String, String> buildingPositions = new HashMap<>();
 
     // stan gry
     private int currentTurn = 1;
@@ -92,6 +94,19 @@ public class City {
     public boolean hasBuilding(Class<?> buildingClass) {
         return buildings.stream()
                 .anyMatch(b -> b.getClass().equals(buildingClass));
+    }
+
+    public void setBuildingPosition(String buildingClassName, String gridCell) {
+        if (buildingClassName == null || gridCell == null) return;
+        buildingPositions.put(buildingClassName, gridCell);
+    }
+
+    public String getBuildingPosition(String buildingClassName) {
+        return buildingPositions.get(buildingClassName);
+    }
+
+    public Map<String, String> getBuildingPositions() {
+        return new HashMap<>(buildingPositions);
     }
 
     // ======= DORADCY =======

@@ -18,13 +18,13 @@
         <Label fx:id="warningLabel" text="" styleClass="warning-label" visible="false"/>
     </HBox>
 
-    <StackPane VBox.vgrow="ALWAYS" style="-fx-background-color: #2c1e16;">
+    <StackPane VBox.vgrow="ALWAYS" style="-fx-background-color: #1d1a13;">
         <WebView fx:id="mapView" />
     </StackPane>
 
-    <HBox styleClass="bottom-panel" spacing="20" prefHeight="260">
+    <HBox styleClass="bottom-panel" spacing="16" prefHeight="278">
 
-        <VBox spacing="8" minWidth="160">
+        <VBox spacing="9" minWidth="165">
             <Label text="📊 ZASOBY" styleClass="section-label"/>
             <HBox styleClass="resource-box" alignment="CENTER_LEFT">
                 <Label text="💰 Złoto" styleClass="resource-name"/>
@@ -55,7 +55,7 @@
             <Button text="▶ Następna tura" styleClass="btn-primary" onAction="#onNextTurn" maxWidth="Infinity"/>
         </VBox>
 
-        <VBox spacing="8" HBox.hgrow="ALWAYS" maxWidth="260">
+        <VBox spacing="9" HBox.hgrow="ALWAYS" maxWidth="270">
             <Label text="🔨 DOSTĘPNE BUDYNKI" styleClass="section-label"/>
             <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll">
                 <VBox fx:id="availableBuildingsBox" spacing="6" style="-fx-padding: 0 5 0 0;"/>
@@ -63,7 +63,7 @@
             <Button text="🔨 Buduj wybrany" styleClass="btn-secondary" onAction="#onBuild" maxWidth="Infinity"/>
         </VBox>
 
-        <VBox spacing="8" HBox.hgrow="ALWAYS" maxWidth="260">
+        <VBox spacing="9" HBox.hgrow="ALWAYS" maxWidth="270">
             <Label text="▲ ZBUDOWANE" styleClass="section-label"/>
             <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="transparent-scroll">
                 <VBox fx:id="ownedBuildingsBox" spacing="6" style="-fx-padding: 0 5 0 0;"/>
@@ -71,7 +71,7 @@
             <Button text="▲ Ulepsz wybrany" styleClass="btn-secondary" onAction="#onUpgrade" maxWidth="Infinity"/>
         </VBox>
 
-        <VBox spacing="6" minWidth="220" HBox.hgrow="ALWAYS">
+        <VBox spacing="7" minWidth="230" HBox.hgrow="ALWAYS">
             <Label text="👑 RADA MIASTA" styleClass="section-label"/>
             <HBox fx:id="advisorsBox" spacing="8" alignment="CENTER_LEFT"/>
             <Label fx:id="advisorQuoteLabel" text="Wybierz doradcę..." styleClass="advisor-quote" maxWidth="Infinity"/>

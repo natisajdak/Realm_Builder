@@ -1,6 +1,5 @@
 package pl.realmbuilder.model;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +13,7 @@ public class GameSave {
     private Map<String, Integer> resources;
     private List<String> buildingClassNames;
     private List<Integer> buildingLevels;
+    private Map<String, String> buildingPositions;
     private int maxGoldEverHeld;
     private int consecutiveRaidsSurvived;
     private int turnsWithHighMorale;
@@ -43,6 +43,9 @@ public class GameSave {
 
     public List<Integer> getBuildingLevels()       { return buildingLevels; }
     public void setBuildingLevels(List<Integer> v) { buildingLevels = v; }
+
+    public Map<String, String> getBuildingPositions() { return buildingPositions; }
+    public void setBuildingPositions(Map<String, String> v) { buildingPositions = v; }
 
     public int getMaxGoldEverHeld()                { return maxGoldEverHeld; }
     public void setMaxGoldEverHeld(int v)          { maxGoldEverHeld = v; }

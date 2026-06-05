@@ -6,41 +6,40 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="pl.realmbuilder.ui.EndScreenController"
       alignment="CENTER"
-      spacing="15"
-      styleClass="dialog-root">
+      spacing="18"
+      styleClass="end-root">
 
-    <Label fx:id="resultLabel" text="WYGRANA!" styleClass="dialog-title"/>
+    <VBox alignment="CENTER" spacing="7" styleClass="end-header" maxWidth="600">
+        <Label fx:id="resultLabel" text="WYGRANA!" styleClass="end-title"/>
+        <Label fx:id="rankLabel" text="" styleClass="end-rank"/>
+        <Label fx:id="rankDescLabel" text="" wrapText="true" styleClass="end-rank-desc" alignment="CENTER" maxWidth="520"/>
+        <Label fx:id="scoreLabel" text="" styleClass="end-score"/>
+    </VBox>
 
-    <Label fx:id="rankLabel" text="" styleClass="dialog-subtitle"/>
+    <HBox spacing="12" alignment="CENTER" maxWidth="600">
+        <VBox alignment="CENTER" spacing="5" styleClass="end-stat-card" HBox.hgrow="ALWAYS">
+            <Label text="Tury" styleClass="end-stat-label"/>
+            <Label fx:id="turnsLabel" text="0" styleClass="end-stat-value"/>
+        </VBox>
+        <VBox alignment="CENTER" spacing="5" styleClass="end-stat-card" HBox.hgrow="ALWAYS">
+            <Label text="Złoto" styleClass="end-stat-label"/>
+            <Label fx:id="goldLabel" text="0" styleClass="end-stat-value"/>
+        </VBox>
+        <VBox alignment="CENTER" spacing="5" styleClass="end-stat-card" HBox.hgrow="ALWAYS">
+            <Label text="Populacja" styleClass="end-stat-label"/>
+            <Label fx:id="popLabel" text="0" styleClass="end-stat-value"/>
+        </VBox>
+        <VBox alignment="CENTER" spacing="5" styleClass="end-stat-card" HBox.hgrow="ALWAYS">
+            <Label text="Morale" styleClass="end-stat-label"/>
+            <Label fx:id="moraleLabel" text="0" styleClass="end-stat-value"/>
+        </VBox>
+    </HBox>
 
-    <Label fx:id="rankDescLabel" text="" wrapText="true" styleClass="dialog-text" alignment="CENTER"/>
+    <VBox spacing="8" styleClass="end-section" maxWidth="600" VBox.vgrow="ALWAYS">
+        <Label text="Osiągnięcia" styleClass="end-section-title"/>
+        <ListView fx:id="achievementsList" prefHeight="130" styleClass="parchment-list"/>
+    </VBox>
 
-    <Label fx:id="scoreLabel" text="" styleClass="dialog-highlight"/>
-
-    <Separator/>
-
-    <Label text="Statystyki końcowe" styleClass="dialog-subtitle"/>
-
-    <GridPane hgap="30" vgap="10" alignment="CENTER">
-        <Label text="Przeżyte tury:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="grid-label"/>
-        <Label fx:id="turnsLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="grid-value"/>
-
-        <Label text="Złoto:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="grid-label"/>
-        <Label fx:id="goldLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="grid-value"/>
-
-        <Label text="Populacja:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="grid-label"/>
-        <Label fx:id="popLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="grid-value"/>
-
-        <Label text="Morale:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="grid-label"/>
-        <Label fx:id="moraleLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="grid-value"/>
-    </GridPane>
-
-    <Separator/>
-
-    <Label text="Osiągnięcia" styleClass="dialog-subtitle"/>
-
-    <ListView fx:id="achievementsList" prefHeight="120" styleClass="parchment-list"/>
-
-    <Button text="Powrót do menu" onAction="#onBackToMenu" styleClass="btn-primary" prefWidth="200"/>
+    <Button text="Powrót do menu" onAction="#onBackToMenu" styleClass="btn-primary" prefWidth="230"/>
 
 </VBox>

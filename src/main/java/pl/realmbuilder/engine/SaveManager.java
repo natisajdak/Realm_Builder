@@ -85,6 +85,7 @@ public class SaveManager {
         }
         save.setBuildingClassNames(classNames);
         save.setBuildingLevels(levels);
+        save.setBuildingPositions(city.getBuildingPositions());
 
         return save;
     }
@@ -127,6 +128,10 @@ public class SaveManager {
                 System.err.println("❌ Nie można odtworzyć budynku: "
                         + classNames.get(i));
             }
+        }
+
+        if (save.getBuildingPositions() != null) {
+            save.getBuildingPositions().forEach(city::setBuildingPosition);
         }
 
         return city;
