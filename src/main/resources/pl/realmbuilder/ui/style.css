@@ -4,8 +4,7 @@
 
 .root {
     -fx-background-color: #241a14;
-    /* Dodany fallback na Emoji dla calej aplikacji */
-    -fx-font-family: "Segoe UI", "Segoe UI Emoji", Arial, sans-serif;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
@@ -454,14 +453,14 @@
     -fx-font-size: 16px;
     -fx-min-width: 22px;
     -fx-alignment: center;
-    -fx-font-family: "Segoe UI Emoji", "Segoe UI Symbol";
+    -fx-font-family: "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;
 }
 
 .building-item-name {
-    -fx-font-size: 11px;
-    -fx-font-family: "Segoe UI Emoji", Arial, sans-serif;
+    -fx-font-size: 12px;
+    -fx-text-fill: #2f241b;
     -fx-font-weight: bold;
-    -fx-text-fill: #8a6020;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .building-item-cost {

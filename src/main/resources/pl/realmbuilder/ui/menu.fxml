@@ -9,7 +9,7 @@
       spacing="18"
       styleClass="menu-root">
 
-    <VBox alignment="CENTER" spacing="2">
+    <VBox alignment="CENTER" spacing="2" style="-fx-padding: 30 0 0 0;">
         <Label text="⚔ REALM BUILDER ⚔" styleClass="menu-title"/>
         <Label text="Zbuduj potężne miasto. Przetrwaj 80 tur." styleClass="menu-subtitle"/>
     </VBox>

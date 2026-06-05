@@ -14,13 +14,13 @@
 
     <Separator/>
 
-    <Label text="👥 Doradcy którzy mogą pomóc:" styleClass="dialog-subtitle"/>
+    <Label fx:id="advisorsTitleLabel" text="👥 Doradcy którzy mogą pomóc:" styleClass="dialog-subtitle"/>
 
     <ListView fx:id="advisorsList" prefHeight="120" styleClass="parchment-list"/>
 
     <HBox spacing="15" alignment="CENTER">
-        <Button text="🤝 Użyj doradcy" onAction="#onUseAdvisor" styleClass="btn-primary"/>
-        <Button text="✖ Odrzuć pomoc" onAction="#onDismiss" styleClass="btn-danger-small"/>
+        <Button fx:id="useAdvisorButton" text="🤝 Użyj doradcy" onAction="#onUseAdvisor" styleClass="btn-primary"/>
+        <Button fx:id="dismissButton" text="✖ Odrzuć pomoc" onAction="#onDismiss" styleClass="btn-danger-small"/>
     </HBox>
 
     <Label fx:id="resultLabel" text="" wrapText="true" styleClass="dialog-highlight" alignment="CENTER" maxWidth="Infinity"/>
