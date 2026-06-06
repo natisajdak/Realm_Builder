@@ -13,7 +13,7 @@ Wciel się we Władcę - rozbudowuj osadę od zera, zarządzaj pięcioma zasobam
 Jedna tura = jeden dzień w mieście. W każdej turze:
 
 1. Przeglądasz stan zasobów i mapę miasta
-2. Podejmujesz decyzję - budujesz, ulepszasz lub przechodzisz dalej
+2. Podejmujesz decyzję - wybierasz budynek z listy, **wskazujesz pustą parcelę na mapie** i budujesz (lub ulepszasz już istniejący obiekt)
 3. Miasto automatycznie produkuje zasoby, pobiera podatki i konsumuje żywność
 4. Losowo może pojawić się zdarzenie (najazd, susza, festiwal...)
 5. Rada Miasta może zaoferować pomoc za złoto
@@ -37,7 +37,8 @@ Balansuj pięcioma zasobami jednocześnie:
 | 👥 Populacja | Domy | Spada przy głodzie i zarazie |
 
 ### 🏗️ Budynki
-Osiem budynków do wzniesienia, każdy klikalny na mapie:
+Osiem budynków do wzniesienia. Przestrzeń w mieście podzielona jest na siatkę działek. Aby wznieść konstrukcję, wybierz budynek z listy, a następnie **wskaż dla niego wolną parcelę na mapie**. 
+Zbudowane obiekty pojawiają się w wyznaczonym przez Ciebie miejscu.
 
 | Budynek   | Koszt | Produkuje |
 |-----------|---|---|
